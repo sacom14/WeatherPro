@@ -1,7 +1,8 @@
 # WeatherPro - Aplicación del Tiempo
 
 ## 📋 Descripción
-WeatherPro es una aplicación web moderna y responsive que proporciona información meteorológica detallada utilizando la API de OpenWeatherMap. Desarrollada con HTML, CSS y JavaScript vanilla, ofrece una experiencia de usuario intuitiva y profesional.
+- WeatherPro es una aplicación web moderna y responsive que proporciona información meteorológica detallada utilizando la API de OpenWeatherMap.
+- Desarrollada con HTML, CSS y JavaScript.
 
 ## ✨ Características
 
