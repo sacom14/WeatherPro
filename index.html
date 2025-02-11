@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherPro - Pronóstico Profesional</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="top-nav">
+            <div class="logo">
+                <i class="fas fa-cloud-sun"></i>
+                WeatherPro
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="citySearch" placeholder="Buscar ciudad...">
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="current-weather">
+                <div id="currentWeatherDetails"></div>
+            </div>
+
+            <div class="forecast-section">
+                <h2>Pronóstico por horas</h2>
+                <div id="hourlyForecast" class="hourly-scroll"></div>
+            </div>
+
+            <div class="weekly-forecast">
+                <h2>Pronóstico semanal</h2>
+                <div id="weeklyForecast"></div>
+            </div>
+
+            <div class="weather-details-grid">
+                <div class="detail-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Viento</h3>
+                    <p id="windSpeed">-- km/h</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Humedad</h3>
+                    <p id="humidity">--%</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Índice UV</h3>
+                    <p id="uvIndex">--</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <h3>Presión</h3>
+                    <p id="pressure">-- hPa</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <script src="js/weather.js"></script>
+</body>
+</html>
+
