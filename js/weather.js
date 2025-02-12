@@ -186,7 +186,7 @@ class WeatherApp {
         const html = `
                 <div class="current-weather-header">
                     <div>
-                    <h1>${data.name}</h1>
+                    <h1>${data.name} - ${data}</h1>
                     <p class="current-temp">${Math.round(data.main.temp)}°C</p>
                     <p>${capitalizeFirstLetter(data.weather[0].description)}</p>
                 </div>
@@ -195,10 +195,15 @@ class WeatherApp {
                 </div>
                 </div>
                 <div class="current-weather-details">
+                    <p>Temperatura mínima: ${Math.round(data.main.temp_min)}°C</p>
+                    <p>Temperatura máxima: ${Math.round(data.main.temp_max)}°C</p>
                     <p>Sensación térmica: ${Math.round(data.main.feels_like)}°C</p>
                     <p>Humedad: ${data.main.humidity}%</p>
                 </div>
         `
+        console.log(data)
+        console.log(data.weather[0].id)
+
         this.currentWeatherDetails.innerHTML = html
     }
 
@@ -236,6 +241,8 @@ class WeatherApp {
                 </div>
             </div>
         `,
+        console.log(dailyData)
+
             )
             .join("")
         this.weeklyForecast.innerHTML = html
@@ -275,9 +282,9 @@ class WeatherApp {
     getWeatherIcon(code) {
         // Mapeo de códigos de clima a iconos de Font Awesome
         const icons = {
-            200: "fas fa-bolt", // Tormenta con lluvia ligera
+            200: "fas fa-cloud-bolt", // Tormenta con lluvia ligera
             300: "fas fa-cloud-rain", // Llovizna
-            500: "fas fa-rain", // Lluvia
+            500: "fas fa-cloud-showers-heavy", // Lluvia
             600: "fas fa-snowflake", // Nieve
             700: "fas fa-smog", // Atmósfera (niebla, etc.)
             800: "fas fa-sun", // Despejado

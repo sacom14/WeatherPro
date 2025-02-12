@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <div class="app-container">
         <nav class="top-nav">
@@ -26,16 +28,6 @@
         <main>
             <div class="current-weather">
                 <div id="currentWeatherDetails"></div>
-            </div>
-
-            <div class="forecast-section">
-                <h2>Pronóstico por horas</h2>
-                <div id="hourlyForecast" class="hourly-scroll"></div>
-            </div>
-
-            <div class="weekly-forecast">
-                <h2>Pronóstico semanal</h2>
-                <div id="weeklyForecast"></div>
             </div>
 
             <div class="weather-details-grid">
@@ -60,6 +52,16 @@
                     <p id="pressure">-- hPa</p>
                 </div>
             </div>
+
+            <div class="forecast-section">
+                <h2>Pronóstico por horas</h2>
+                <div id="hourlyForecast" class="hourly-scroll"></div>
+            </div>
+
+            <div class="weekly-forecast">
+                <h2>Pronóstico semanal</h2>
+                <div id="weeklyForecast"></div>
+            </div>
         </main>
     </div>
 
@@ -69,5 +71,5 @@
 
     <script src="js/weather.js"></script>
 </body>
-</html>
 
+</html>
