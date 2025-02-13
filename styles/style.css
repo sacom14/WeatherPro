@@ -26,7 +26,6 @@ body {
     padding: 0 20px;
 }
 
-/* Navegación */
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -101,7 +100,6 @@ body {
     background-color: #f1f3f4;
 }
 
-/* Clima actual */
 .current-weather {
     background: var(--card-background);
     border-radius: 16px;
@@ -127,7 +125,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Pronóstico por horas */
 .forecast-section {
     margin-bottom: 2rem;
 }
@@ -151,7 +148,6 @@ body {
     box-shadow: var(--shadow);
 }
 
-/* Pronóstico semanal */
 .weekly-forecast {
     margin-bottom: 2rem;
 }
@@ -172,7 +168,6 @@ body {
     transform: translateX(5px);
 }
 
-/* Grid de detalles */
 .weather-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -194,7 +189,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Loader */
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -227,7 +221,6 @@ body {
     }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .top-nav {
         flex-direction: column;
