@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherPro - Pronóstico Profesional</title>
+    <title>WeatherPro - El tiempo real de tu ubicación</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -37,19 +37,19 @@
                     <p id="windSpeed">-- km/h</p>
                 </div>
                 <div class="detail-card">
-                    <i class="fas fa-tint"></i>
-                    <h3>Humedad</h3>
-                    <p id="humidity">--%</p>
+                    <i class="fa-solid fa-temperature-low"></i>
+                    <h3>T. Mín.</h3>
+                    <p id="minium">--°C</p>
                 </div>
                 <div class="detail-card">
-                    <i class="fas fa-sun"></i>
-                    <h3>Índice UV</h3>
-                    <p id="uvIndex">--</p>
+                    <i class="fa-solid fa-temperature-high"></i>
+                    <h3>T. Máx.</h3>
+                    <p id="max">--°C</p>
                 </div>
                 <div class="detail-card">
-                    <i class="fas fa-compress-arrows-alt"></i>
-                    <h3>Presión</h3>
-                    <p id="pressure">-- hPa</p>
+                    <i class="fa-solid fa-plus-minus"></i>
+                    <h3>T. Media día</h3>
+                    <p id="media">-- °C</p>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
         <div class="loader"></div>
     </div>
 
-    <script src="js/weather.js"></script>
+    <script src="js/wather.js"></script>
 </body>
 
 </html>
