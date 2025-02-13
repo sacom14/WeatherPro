@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const API_KEY = "9356ba008da24375b88bfdd22195f200";
     const URL = "https://api.openweathermap.org";
-    const searchInput = document.getElementById('citySearch');
-    const searchResults = document.getElementById('searchResults');
+
     const currentWeatherDetails = document.getElementById('currentWeatherDetails');
     const hourlyForecast = document.getElementById('hourlyForecast');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    let searchTimeout = null;
 
     loadDefaultCity();
     setupEventListeners();
@@ -212,116 +209,121 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //todo: pulir la barra de buscador
-    // function setupEventListeners() {
-    //     // Usar debounce para la búsqueda
-    //     searchInput.addEventListener('input', (e) => {
-    //         clearTimeout(searchTimeout);
-    //         searchTimeout = setTimeout(() => {
-    //             handleSearchInput(e.target.value);
-    //         }, 500);
-    //     });
+// const searchInput = document.getElementById('citySearch');
+// const searchResults = document.getElementById('searchResults');
+// const loadingOverlay = document.getElementById('loadingOverlay');
+// let searchTimeout = null;
 
-    //     // out click
-    //     document.addEventListener('click', (e) => {
-    //         if (!searchResults.contains(e.target) && e.target !== searchInput) {
-    //             searchResults.style.display = 'none';
-    //         }
-    //     });
+// function setupEventListeners() {
+//     // Usar debounce para la búsqueda
+//     searchInput.addEventListener('input', (e) => {
+//         clearTimeout(searchTimeout);
+//         searchTimeout = setTimeout(() => {
+//             handleSearchInput(e.target.value);
+//         }, 500);
+//     });
 
-    //     // enter click
-    //     searchInput.addEventListener('keypress', (e) => {
-    //         if (e.key === 'Enter' && searchInput.value.trim() !== '') {
-    //             handleSearchInput(searchInput.value);
-    //         }
-    //     });
-    // }
+//     // out click
+//     document.addEventListener('click', (e) => {
+//         if (!searchResults.contains(e.target) && e.target !== searchInput) {
+//             searchResults.style.display = 'none';
+//         }
+//     });
+
+//     // enter click
+//     searchInput.addEventListener('keypress', (e) => {
+//         if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+//             handleSearchInput(searchInput.value);
+//         }
+//     });
+// }
 
 
-    // async function handleSearchInput(searchTerm) {
-    //     if (searchTerm.length < 2) {
-    //         searchResults.style.display = 'none';
-    //         return;
-    //     }
+// async function handleSearchInput(searchTerm) {
+//     if (searchTerm.length < 2) {
+//         searchResults.style.display = 'none';
+//         return;
+//     }
 
-    //     try {
-    //         showLoading();
-    //         const cities = await searchCities(searchTerm);
-    //         displaySearchResults(cities);
-    //     } catch (error) {
-    //         showError('Error en la búsqueda: ' + error.message);
-    //     } finally {
-    //         hideLoading();
-    //     }
-    // }
+//     try {
+//         showLoading();
+//         const cities = await searchCities(searchTerm);
+//         displaySearchResults(cities);
+//     } catch (error) {
+//         showError('Error en la búsqueda: ' + error.message);
+//     } finally {
+//         hideLoading();
+//     }
+// }
 
-    // function showLoading() {
-    //     loadingOverlay.style.display = "flex"
-    // }
+// function showLoading() {
+//     loadingOverlay.style.display = "flex"
+// }
 
-    // function hideLoading() {
-    //     loadingOverlay.style.display = "none"
-    // }
+// function hideLoading() {
+//     loadingOverlay.style.display = "none"
+// }
 
-    // async function searchCities(query) {
-    //     try {
-    //         const response = await fetch(
-    //             `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`
-    //         );
+// async function searchCities(query) {
+//     try {
+//         const response = await fetch(
+//             `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`
+//         );
 
-    //         if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //         }
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
 
-    //         const cities = await response.json();
-    //         return cities.map(city => ({
-    //             name: city.name,
-    //             state: city.state,
-    //             country: city.country,
-    //             lat: city.lat,
-    //             lon: city.lon
-    //         }));
-    //     } catch (error) {
-    //         throw new Error('Error buscando ciudades: ' + error.message);
-    //     }
-    // }
+//         const cities = await response.json();
+//         return cities.map(city => ({
+//             name: city.name,
+//             state: city.state,
+//             country: city.country,
+//             lat: city.lat,
+//             lon: city.lon
+//         }));
+//     } catch (error) {
+//         throw new Error('Error buscando ciudades: ' + error.message);
+//     }
+// }
 
-    // function displaySearchResults(cities) {
-    //     searchResults.innerHTML = '';
+// function displaySearchResults(cities) {
+//     searchResults.innerHTML = '';
 
-    //     if (cities.length === 0) {
-    //         searchResults.innerHTML = `
-    //             <div class="search-result-item no-results">
-    //                 <i class="fas fa-info-circle"></i>
-    //                 No se encontraron resultados
-    //             </div>`;
-    //         searchResults.style.display = 'block';
-    //         return;
-    //     }
+//     if (cities.length === 0) {
+//         searchResults.innerHTML = `
+//             <div class="search-result-item no-results">
+//                 <i class="fas fa-info-circle"></i>
+//                 No se encontraron resultados
+//             </div>`;
+//         searchResults.style.display = 'block';
+//         return;
+//     }
 
-    //     cities.forEach(city => {
-    //         const div = document.createElement('div');
-    //         div.className = 'search-result-item';
+//     cities.forEach(city => {
+//         const div = document.createElement('div');
+//         div.className = 'search-result-item';
 
-    //         // Crear el nombre completo de la ubicación
-    //         let locationName = city.name;
-    //         if (city.state) locationName += `, ${city.state}`;
-    //         locationName += `, ${getCountryName(city.country)}`;
+//         // Crear el nombre completo de la ubicación
+//         let locationName = city.name;
+//         if (city.state) locationName += `, ${city.state}`;
+//         locationName += `, ${getCountryName(city.country)}`;
 
-    //         div.innerHTML = `
-    //             <i class="fas fa-map-marker-alt"></i>
-    //             <div class="city-info">
-    //                 <div class="city-name">${locationName}</div>
-    //                 <div class="city-coords">
-    //                     ${city.lat.toFixed(2)}°, ${city.lon.toFixed(2)}°
-    //                 </div>
-    //             </div>
-    //         `;
+//         div.innerHTML = `
+//             <i class="fas fa-map-marker-alt"></i>
+//             <div class="city-info">
+//                 <div class="city-name">${locationName}</div>
+//                 <div class="city-coords">
+//                     ${city.lat.toFixed(2)}°, ${city.lon.toFixed(2)}°
+//                 </div>
+//             </div>
+//         `;
 
-    //         div.addEventListener('click', () => selectCity(city));
-    //         searchResults.appendChild(div);
-    //     });
+//         div.addEventListener('click', () => selectCity(city));
+//         searchResults.appendChild(div);
+//     });
 
-    //     searchResults.style.display = 'block';
-    // }
+//     searchResults.style.display = 'block';
+// }
 
 
